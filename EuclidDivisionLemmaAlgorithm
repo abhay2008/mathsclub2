@@ -1,0 +1,49 @@
+# Taking the input from the user
+a = int(input("\n\033[95mEnter the first number:\033[0m "))
+b = int(input("\033[95mEnter the second number:\033[0m "))
+
+# Storing the integers (Will be used later)
+oa = a
+ob = b
+
+# Explanation of Euclid's Division Lemma
+print("\n--> \033[94mHCF and LCM of the two numbers\033[0m")
+print("\n--> Formula => \033[93ma = b × q + r\033[0m | \033[2mFor a, b positive integers. q (quotient) | r (remainder)\033[0m")
+print("\n--> Thus Formula => \033[91m{a} = {b} × q + r\033[0m")
+
+# Checking for the greater number and using it as "a"
+if (a > b and a != 0 and b != 0):
+    a = ob
+    b = oa
+elif (b > a and a != 0 and b != 0): 
+    a = ob
+    b = oa
+
+# Finding quotient and remainder
+q = (a / b)
+r = (a % b)
+
+# Printing the formula with the integers
+print(f"\n   \033[1;32m{int(a)} = {int(b)} × {int(q)} + {int(r)}\033[0m")
+
+# While loop for finding HCF using Euclid's Division Lemma Algorithm
+while (r > 0):
+    a = b
+    b = r
+    q = (a / b)
+    r = (a % b)
+
+    print(f"   \033[1;32m{int(a)} = {int(b)} × {int(q)} + {int(r)}\033[0m")
+
+# Calculating LCM
+lcm = int(abs(oa * ob) / int(b))
+
+# Printing the HCF of the two numbers along with the original numbers using f-string
+print(f"\n==> \033[91mHCF of {oa} and {ob} is: {int(b)}\033[0m")
+
+# Printing the LCM of the two numbers along with the original numbers using f-string
+print(f"\n==> \033[94mLCM of {oa} and {ob} is: {lcm}\033[0m")
+
+# Explanation: Checking if the HCF is 1 and printing a message in various colors.
+if int(b) == 1:
+    print("∴The numbers {oa} and {ob} are COPRIMES!")
