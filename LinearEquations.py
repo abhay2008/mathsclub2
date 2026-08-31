@@ -60,9 +60,10 @@ def solve_linear_system():
     return x, y
 
 # Example usage:
-solution = solve_linear_system()
+if __name__ == "__main__":
+    solution = solve_linear_system()
 
-if solution:
-    print("\033[1;35mThe solution is x = {}, y = {}\033[0m".format(solution[0], solution[1]))
-else:
-    print("\033[1;31mThe system of equations has no unique solution.\033[0m")
+    if solution:
+        print("\033[1;35mThe solution is x = {}, y = {}\033[0m".format(solution[0], solution[1]))
+    else:
+        print("\033[1;31mThe system of equations has no unique solution.\033[0m")
